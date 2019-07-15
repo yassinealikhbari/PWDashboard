@@ -1,0 +1,39 @@
+.raspi-card {
+  margin: 10px;
+}
+
+.raspi-details {
+  color: #000000;
+}
+
+.raspi-title {
+  padding: 10px;
+  color: #000000;
+}
+
+.ra-list {
+  position: absolute;
+  z-index: 0;
+  top: 2rem;
+  right: -0.1rem;
+  opacity: 0.1;
+  font-size: 4.5rem;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+
+.narrower {
+  width: 80%;
+  margin: -20px auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to bottom right, #FFF, #FCFCFC);
+}
+.card-footer {
+  background-image: linear-gradient(to bottom right, #FFF, #FCFCFC);
+}
+.card-footer:hover {
+  background-image: linear-gradient(to bottom right, #d8e1ff, #ebfaff);
+  cursor: pointer;
+  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.2);
+}

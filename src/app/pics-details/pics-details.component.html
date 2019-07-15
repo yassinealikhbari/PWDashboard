@@ -1,0 +1,11 @@
+<h1>{{pics.name}}</h1>
+<div class="myDetailsContainer">
+  <div class="mt-4 mb-4" *ngFor="let sensor of sensorsArray">
+    <div *ngIf="sensor.includes('luce')">
+      <app-light [lightName]="sensor" [picAddress]="pics.address"></app-light>
+    </div>
+    <div *ngIf="sensor.includes('motore')">
+      <app-door [doorName]="sensor" [picAddress]="pics.address"></app-door>
+    </div>
+  </div>
+</div>

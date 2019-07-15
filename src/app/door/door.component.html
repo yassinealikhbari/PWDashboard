@@ -1,0 +1,40 @@
+<div class="sensor-card card text-white mt-5 mb-5">
+
+  <div class="view view-cascade narrower">
+    <!-- Title -->
+    <div class="card-header-title sensor-title text-center">
+      <div class="fas">
+        <i class="fas fa-door-open"></i>
+        <link rel="icon" type="image/png" href="https://image.flaticon.com/icons/svg/59/59805.svg">
+      </div>
+    </div>
+    <!-- Subtitle -->
+    <!--<h5 class="mb-0 pb-3 pt-2">Follow me</h5>-->
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade mt-4">
+        <span class="far">
+          <span class="fa fa-circle ml-2 mr-2 lightStat" title="{{status}}"></span>
+        </span>
+  </div>
+  <!-- Card footer -->
+  <div class="card-footer text-black-50">
+    <a class="sensor-details off" (click)="sendMessage('off')">
+      <div class="text-center">
+        CLOSE
+        <span class="fa">
+          <span class="fa-power-off ml-1 mr-2"></span>
+    </span>
+      </div>
+    </a>
+    <a class="sensor-details on" (click)="sendMessage('on')">
+      <div class="text-center">
+        OPEN
+        <span class="fa">
+          <span class="fa-power-off ml-1 mr-2"></span>
+    </span>
+      </div>
+    </a>
+  </div>
+</div>

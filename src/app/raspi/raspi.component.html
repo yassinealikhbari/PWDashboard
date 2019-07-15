@@ -1,0 +1,38 @@
+<div class="raspi-card card card-cascade special-color-dark text-white">
+
+  <div class="view view-cascade narrower">
+
+    <!-- Title -->
+    <div class="card-header-title raspi-title text-center">
+      {{raspiName}}
+      <div class="fa right">
+        <span class="fa-circle ml-2 {{raspiStatus}}" title="{{raspiStatus}}"></span>
+      </div>
+    </div>
+    <!-- Subtitle -->
+    <!--<h5 class="mb-0 pb-3 pt-2">Follow me</h5>-->
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade mt-4">
+    <ul type="none">
+      <li *ngFor="let pic of picsArray" class="m-2">
+        <app-pic [pic]="pic"></app-pic>
+      </li>
+    </ul>
+    <span class="fa">
+          <span class="fa-list ml-2 mr-2 ra-list"></span>
+    </span>
+  </div>
+
+  <!-- Card footer -->
+  <a class="raspi-details" routerLink="details" routerLinkActive="active" (click)="setPics()">
+    <div class="card-footer text-center">
+      Dettagli
+      <span class="fa">
+          <span class="fa-arrow-right ml-2 mr-2"></span>
+    </span>
+    </div>
+  </a>
+
+</div>

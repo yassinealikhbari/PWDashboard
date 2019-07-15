@@ -1,0 +1,16 @@
+.picsDetailsContainer {
+  border-radius: 10px;
+  background: #455a64;
+  padding: 20px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-row-gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .myDetailsContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
