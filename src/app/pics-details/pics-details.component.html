@@ -1,11 +1,21 @@
-<h1>{{pics.name}}</h1>
-<div class="myDetailsContainer">
-  <div class="mt-4 mb-4" *ngFor="let sensor of sensorsArray">
+<div class="raspi-card card card-cascade special-color-dark text-white mb-5">
+<div class="view view-cascade narrower">
+  <div class="card-header-title raspi-title text-center">
+    <app-pic [pic]="pics" [picAddress]="pics.address" [deviceId]="raspo"></app-pic>
+  </div>
+</div>
+
+<div class="myDetailsContainer card-body card-body-cascade">
+  <div class="mt-4" *ngFor="let sensor of sensorsNames; let i = index" [attr.data-index]="i">
     <div *ngIf="sensor.includes('luce')">
-      <app-light [lightName]="sensor" [picAddress]="pics.address"></app-light>
+      <app-light [sensorLabel]="sensorsLabels[i]" [deviceId]="raspo" [sensorName]="sensor" [picAddress]="pics.address"></app-light>
     </div>
     <div *ngIf="sensor.includes('motore')">
-      <app-door [doorName]="sensor" [picAddress]="pics.address"></app-door>
+      <app-door [sensorLabel]="sensorsLabels[i]" [sensorName]="sensor" [deviceId]="raspo" [picAddress]="pics.address"></app-door>
     </div>
   </div>
+  <div class="mt-4">
+    <app-add [deviceId]="raspo" [pic]="picsKey" [sensorsLenght]="sensorsNames.length"></app-add>
+  </div>
+</div>
 </div>

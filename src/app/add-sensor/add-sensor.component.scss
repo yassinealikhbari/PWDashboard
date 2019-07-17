@@ -1,0 +1,17 @@
+.fa-cont {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 10px;
+  height: 100%;
+  width: 100%;
+}
+.add-icon {
+  display: block;
+  margin: auto auto;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+.add-icon:hover {
+  text-shadow: 0 0 10px #656565;
+}

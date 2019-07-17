@@ -28,3 +28,30 @@ body {
 .off .fa {
   color: #da4252;
 }
+.narrower {
+  transition: width 0.2s linear, box-shadow 0.2s linear, background 0.2s linear;
+  width: 80%;
+  height: 100%;
+  //margin: -20px auto;
+  margin: auto auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.2);
+  background: rgba(50, 150, 255, .6);
+}
+.my-switch {
+  display: flex;
+  justify-content: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.gridContainer {
+  display: grid;
+  grid-row-gap: 20px;
+}
+.add-box {
+  border: dashed 1px black;
+  background-color: #34434b !important;
+}

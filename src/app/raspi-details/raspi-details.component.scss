@@ -1,12 +1,7 @@
-.picsDetailsContainer {
-  border-radius: 10px;
-  background: #455a64;
-  padding: 20px;
-}
-
-.gridContainer {
+.myDetailsContainer {
   display: grid;
-  grid-row-gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 10px;
 }
 
 @media screen and (max-width: 600px) {

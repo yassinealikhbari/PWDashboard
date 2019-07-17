@@ -1,0 +1,41 @@
+<div class="fa fa-cont raspi-card card card-cascade add-pic text-white mt-0">
+  <span class="fa fa-plus-circle add-icon text-white fa-3x" data-toggle="modal" data-target="#addPicModule"
+        title="Add New Pic"></span>
+</div>
+
+<div class="modal fade text-black-50" id="addPicModule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="picLabel">Add New Pic</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #sendPic="ngForm" (ngSubmit)="onClickSubmit(sendPic.value)">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="picName">Pic Name : </span>
+            </div>
+            <input type="text" name="pic" placeholder="Pic Name" ngModel>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="picAddress">Pic Address: </span>
+            </div>
+            <input type="text" name="picAddress" placeholder="deviceId" ngModel>
+          </div>
+          <!--<button type="submit" value="submit" class="btn btn-secondary">Save changes</button>-->
+          <input type="submit" value="Add Device" class="btn btn-secondary ">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

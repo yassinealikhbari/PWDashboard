@@ -1,7 +1,12 @@
 .myDetailsContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-column-gap: 10px;
+}
+
+.narrower {
+  padding: 10px;
+  margin-top: -20px;
 }
 @media screen and (max-width: 600px) {
   .myDetailsContainer {

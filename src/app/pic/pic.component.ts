@@ -1,7 +1,7 @@
-import {AfterContentInit, AfterViewInit, Component, Injectable, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Injectable, Input, OnInit, Output} from '@angular/core';
 import {ApiService} from '../api.service';
-import {Socket} from 'ngx-socket-io';
-import {Subscription} from 'rxjs';
+import {WebSocketService} from '../web-socket.service';
+import {Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Component({
@@ -11,42 +11,37 @@ import {map} from 'rxjs/operators';
 })
 
 @Injectable()
-export class PicComponent implements OnDestroy, OnInit {
-  statusClass: string;
+export class PicComponent implements OnInit {
+  statusClass = 'disabled';
 
-  @Input()
-  pic: any;
+  @Input() pic: any;
+  @Input() picAddress: string;
+  @Input() deviceId: string;
+
+  message: Subject<any>;
   picsArray: any;
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private wsService: WebSocketService) {
   }
 
   ngOnInit() {
-    // this.socket.on('flyiot', (data: any) => {
-    //   console.dir(data);
-    // });
-    this.apiService.sendMessage('isConn', 'pic', this.pic.address).subscribe((res: any) => {
-      console.dir('OKS' + res);
-      this.statusClass = res.payload.connected;
-      console.dir(this.pic.picAddress);
+    console.log(this.pic);
+    this.message = this.wsService
+    .connect(this.deviceId + '/' + this.picAddress).pipe(map((response: any): any => {
+      return response;
+    })) as Subject<any>;
+
+    this.message.subscribe(msg => {
+      this.statusClass = msg.connected;
+      this.apiService.setPicStatus(this.statusClass);
+      console.log(this.statusClass);
     });
 
-    /*const picsKey: string[] = Object.keys(this.pics);
-    console.dir(picsKey);
-    for (let i = 0; i < this.picsArray.length; i++) {
-      this.picsArray.push(this.pics[picsKey[i]]);
-    }*/
-    // this.getMessage();
+    this.apiService.sendMessage(this.deviceId, 'isConn', 'pic', this.pic.address).subscribe((res: any) => {
+      console.dir(res);
+      this.statusClass = res.payload.connected;
+      this.apiService.setPicStatus(this.statusClass);
+      console.log(this.statusClass);
+    });
   }
-
-  // getMessage() {
-  //  return this.socket
-  //    .fromEvent('message').pipe(map((data: any) => {
-  //      console.dir(data);
-  //    }));
-  // }
-
-  public ngOnDestroy() {
-  }
-
 }

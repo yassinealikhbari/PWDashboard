@@ -1,0 +1,41 @@
+<div class="fa fa-cont">
+  <span  class="fa fa-plus-circle add-icon text-white fa-3x" data-toggle="modal" data-target="#addSensorModule" title="Add New Pic"></span>
+</div>
+
+<div class="modal fade text-black-50" id="addSensorModule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="picLabel">Add New Sensor</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #sendSensor="ngForm" (ngSubmit)="onClickSubmit(sendSensor.value)">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="picName">Sensor Name : </span>
+            </div>
+            <input type="text" name="sensor" placeholder="Sensor Name" ngModel>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="label">Sensor Label: </span>
+            </div>
+            <input type="text" name="label" placeholder="Sensor Label" ngModel>
+          </div>
+
+          <!--<button type="submit" value="submit" class="btn btn-secondary">Save changes</button>-->
+          <input type="submit" value="Add Device" class="btn btn-secondary ">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {ApiService} from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'PWDashboard';
-  constructor() {}
+  constructor(private  apiService: ApiService) {}
 
   ngOnInit(): void {
   }

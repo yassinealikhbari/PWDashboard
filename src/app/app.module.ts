@@ -22,6 +22,10 @@ import { DoorComponent } from './door/door.component';
 import { PicComponent } from './pic/pic.component';
 import { AddComponent } from './add/add.component';
 import { PicsDetailsComponent } from './pics-details/pics-details.component';
+import {WebSocketService} from './web-socket.service';
+import { AddRaspoComponent } from './add-raspo/add-raspo.component';
+import { AddPicComponent } from './add-pic/add-pic.component';
+import { AddSensorComponent } from './add-sensor/add-sensor.component';
 
 // const config: SocketIoConfig = { url: 'ws://yasberry.local:8988', options: {} };
 
@@ -39,7 +43,10 @@ import { PicsDetailsComponent } from './pics-details/pics-details.component';
     DoorComponent,
     PicComponent,
     AddComponent,
-    PicsDetailsComponent
+    PicsDetailsComponent,
+    AddRaspoComponent,
+    AddPicComponent,
+    AddSensorComponent
   ],
   imports: [
     BrowserModule,
@@ -58,12 +65,12 @@ import { PicsDetailsComponent } from './pics-details/pics-details.component';
         component: HomeComponent
       },
       {
-        path: 'details',
+        path: 'details/:id',
         component: RaspiDetailsComponent
       },
     ]),
   ],
-  providers: [],
+  providers: [WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

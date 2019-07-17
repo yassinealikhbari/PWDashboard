@@ -1,7 +1,6 @@
 <div class="gridContainer">
-  <div *ngFor="let pics of picsArray">
-    <div class="picsDetailsContainer">
-      <app-pics-details [pics]="pics"></app-pics-details>
-    </div>
+  <div *ngFor="let pics of picsArray;let i = index" [attr.data-index]="i">
+      <app-pics-details [picsKey]="'pic'+(i+1) " [pics]="pics" [raspo]="raspoName"></app-pics-details>
   </div>
+  <app-add-pic [deviceId]="raspoName" [picsLenght]="picsArray.length"></app-add-pic>
 </div>

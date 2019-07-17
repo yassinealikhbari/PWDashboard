@@ -1,4 +1,7 @@
-<div *ngFor="let raspo of raspsArray;" style="margin-top: 50px">
-  <app-raspi [raspiName]="raspo.deviceId" [raspiStatus]="raspo.status" [pics]="raspo.pics"> </app-raspi>
+<div class="raspiDetailsContainer">
+  <div *ngFor="let raspo of raspsArray;">
+    <app-raspi [raspiName]="raspo.deviceId" [raspiStatus]="raspo.status" [pics]="raspo.configuration.desired.pics"> </app-raspi>
+  </div>
+  <div class="mt-4">
+    <app-add-raspo></app-add-raspo></div>
 </div>
-<app-add></app-add>

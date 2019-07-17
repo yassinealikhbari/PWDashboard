@@ -1,0 +1,55 @@
+<div class="card card-cascade text-white add-raspo">
+
+  <div class="view view-cascade narrower add-raspo">
+    <div class="card-header-title raspi-title text-center text-white">
+      <div class="fa right mr-2">
+        <span class="fa-plus ml-2 {{raspiStatus}}" title="{{raspiStatus}}"></span>
+      </div>
+      Nuovo Raspberry
+    </div>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade p-5">
+    <div class="fa fa-cont">
+  <span class="fa fa-plus-circle add-icon text-white fa-3x" data-toggle="modal" data-target="#addDeviceModule"
+        title="Add New Pic"></span>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade text-black-50" id="addDeviceModule" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="raspoLabel">Add New Raspberry</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form #sendRasp = "ngForm" (ngSubmit)="onClickSubmit(sendRasp.value)">
+
+          <!--<label>-->
+            <!--<input  type="text" name="deviceId" placeholder="deviceId" ngModel>-->
+          <!--</label>-->
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">deviceId : </span>
+            </div>
+            <input type="text" name="deviceId" placeholder="deviceId" ngModel>
+          </div>
+          <!--<button type="submit" value="submit" class="btn btn-secondary">Save changes</button>-->
+          <input type="submit" value="Add Device" class="btn btn-secondary ">
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

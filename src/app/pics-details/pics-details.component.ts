@@ -8,16 +8,20 @@ import {Component, Input, OnInit} from '@angular/core';
 export class PicsDetailsComponent implements OnInit {
 
   @Input() pics: any;
+  @Input() raspo: string;
+  @Input() picsKey: string;
 
-  sensorsArray: any[] = [];
+  sensorsNames: any[] = [];
+  sensorsLabels: any[] = [];
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.pics);
     const sensorsKey: string[] = Object.keys(this.pics.sensors);
-    console.dir(sensorsKey);
     for (let i = 0; i < sensorsKey.length; i++) {
-      this.sensorsArray.push(this.pics.sensors[sensorsKey[i]]);
-      console.dir(this.sensorsArray);
+      this.sensorsNames.push(this.pics.sensors[sensorsKey[i]].name);
+      this.sensorsLabels.push(this.pics.sensors[sensorsKey[i]].label);
     }
   }
 

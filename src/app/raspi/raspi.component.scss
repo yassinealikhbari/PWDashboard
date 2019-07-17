@@ -21,19 +21,27 @@
   -webkit-transform: rotate(15deg);
   transform: rotate(15deg);
 }
-
 .narrower {
+  transition: width 0.2s linear, box-shadow 0.2s linear, background 0.2s linear;
   width: 80%;
+  height: 100%;
   margin: -20px auto;
   border-radius: 5px;
   box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(to bottom right, #FFF, #FCFCFC);
+  background: rgba(50, 150, 255, .6);
 }
-.card-footer {
-  background-image: linear-gradient(to bottom right, #FFF, #FCFCFC);
-}
-.card-footer:hover {
-  background-image: linear-gradient(to bottom right, #d8e1ff, #ebfaff);
+.narrower:hover {
+  transition: width 0.2s linear, box-shadow 0.2s linear, background 0.2s linear;
+  width: 81%;
   cursor: pointer;
-  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px 3px rgba(240, 240, 240, 0.1);
+  background: rgba(50, 150, 255, .7);
 }
+//.card-footer {
+//  background-image: linear-gradient(to bottom right, #FFF, #FCFCFC);
+//}
+//.card-footer:hover {
+//  background-image: linear-gradient(to bottom right, #d8e1ff, #ebfaff);
+//  cursor: pointer;
+//  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.2);
+//}
